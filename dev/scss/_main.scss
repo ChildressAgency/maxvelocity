@@ -1,0 +1,20 @@
+body{
+  font-family: $main-font;
+  font-weight: $font-weight-normal;
+  color: $alt-color;
+  font-size:16px;
+}
+
+a{
+  transition: all .3s ease;
+}
+
+.dark-overlay{
+  position:absolute;
+  height:100%;
+  width:100%;
+  left:0;
+  top:0;
+  background-color:rgba(0,0,0,.5);
+  z-index:1;
+}

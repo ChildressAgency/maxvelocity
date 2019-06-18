@@ -1,0 +1,43 @@
+#hero{
+  margin-top: 46px;
+  position:relative;
+  height:800px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .textured-border{
+    position:absolute;
+    bottom:0;
+    z-index:3;
+    width:100%;
+    max-height:113px;
+  }
+}
+
+.hero-caption{
+  position:relative;
+  z-index: 3;
+  text-align:right;
+  
+  h1.text-stroke{
+    font-size:74px;
+    font-family: $alt-font;
+    font-weight: $font-weight-extrabold;
+    text-transform:uppercase;
+    line-height:.9em;
+    color: $brand-color;
+    text-shadow: 1px 0px 0px #fff, 
+                -1px 0px 0px #fff, 
+                0px 1px 0px #fff, 
+                0px -1px 0px #fff;
+  }
+
+  p{
+    font-size:18px;
+    font-weight: $font-weight-semibold;
+    color:#fff;
+    max-width:320px;
+    margin-right:0;
+    margin-left:auto;
+  }
+}
