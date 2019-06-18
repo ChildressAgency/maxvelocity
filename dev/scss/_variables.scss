@@ -14,3 +14,9 @@ $font-weight-extrabold: 800;
 $brand-color: #8b8055;
 $alt-color: #000;
 $accent-color: #573c00;
+
+@mixin max-width-centered($max-width){
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
