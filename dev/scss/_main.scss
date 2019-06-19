@@ -44,3 +44,25 @@ section{
     color: $brand-color;
   }
 }
+
+.btn-main{
+  background-image: url(images/texture-button.png);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  background-position:center center;
+  font-family: $alt-font;
+  font-weight: $font-weight-bold;
+  color: #fff;
+  font-size:16px;
+  text-transform: uppercase;
+  padding: 2% 8%;
+  margin-top:25px;
+  display:inline-block;
+
+  &:hover,
+  &:focus{
+    color: #fff;
+    text-decoration:none;
+    background-color:$accent-color;
+  }
+}
