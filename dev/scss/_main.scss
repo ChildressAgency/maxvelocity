@@ -36,7 +36,7 @@ section{
   padding-bottom:40px;
 }
 
-.page-intro{
+.intro-centered{
   text-align:center;
   @include max-width-centered(775px);
 
@@ -64,5 +64,40 @@ section{
     color: #fff;
     text-decoration:none;
     background-color:$accent-color;
+  }
+}
+
+.btn-alt{
+  display:inline-block;
+  font-size:24px;
+  font-weight: $font-weight-extrabold;
+  color: $brand-color;
+  background-color: #fff;
+  padding:5px 20px;
+
+  &:hover,
+  &:focus{
+    background-color: $brand-color;
+    color: #fff;
+    text-decoration:none;
+  }
+}
+
+.form-control{
+  border-radius:0;
+  border:none;
+}
+
+.btn-submit{
+  display:inline-block;
+  border:none;
+  background-color: $brand-color-light;
+  padding:10px 40px;
+  width:100%;
+  transition:all .3s ease;
+
+  &:hover,
+  &:focus{
+    background-color: $brand-color;
   }
 }
