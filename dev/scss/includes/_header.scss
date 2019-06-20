@@ -60,6 +60,10 @@
   transition:background-color .3s ease;
 
   .navbar-nav{ 
+    .dropdown-item{
+      font-size:14px;
+    }
+
     .nav-link{
       color:#fff;
       text-transform:uppercase;
