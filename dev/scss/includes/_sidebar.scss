@@ -1,0 +1,52 @@
+.sidebar-section{
+  padding-top:25px;
+
+  &.sidebar-search+.sidebar-section{
+    padding-top:0;
+    margin-top:25px;
+  }
+  
+  @include media-breakpoint-up(768px){
+    border-right:1px solid $brand-color;
+
+    &:first-child{
+      border-right:none;
+    }
+  }
+
+  h3{
+    font-size:28px;
+    font-weight: $font-weight-semibold;
+  }
+
+  ol{
+    margin-bottom:0;
+    padding-left:15px;
+   
+    li{
+      padding-bottom:5px;
+  
+      a{
+        color: #000;
+      }
+    }
+  }
+}
+
+.sidebar-search{
+  margin-bottom:25px;
+
+  .form-control{
+    border:1px solid $brand-color-light;
+  }
+
+  #button-search{
+    border-width: 1px;
+    border-color: $brand-color-light;
+
+    &:hover,
+    &:focus{
+      background-color: $brand-color-light;
+    }
+  }
+}

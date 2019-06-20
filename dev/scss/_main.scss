@@ -69,7 +69,7 @@ section{
 
 .btn-alt{
   display:inline-block;
-  font-size:24px;
+  font-size:16px;
   font-weight: $font-weight-extrabold;
   color: $brand-color;
   background-color: #fff;
@@ -100,4 +100,46 @@ section{
   &:focus{
     background-color: $brand-color;
   }
+}
+
+.post-link{
+  height:245px;
+  width:245px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:25px;
+  position:relative;
+}
+.post-link-content{
+  padding:10px;
+  opacity:0;
+  transition:all .3s ease;
+  text-align:center;
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:3;
+
+  h3{
+    color:#fff;
+    font-size:20px;
+    font-weight: $font-weight-semibold;
+    text-transform:uppercase;
+    position:relative;
+    z-index:5;
+  }
+  .btn-alt{
+    position:relative;
+    z-index:5;
+  }
+}
+.post-link:hover .post-link-content{
+  opacity:1;
+}
+
+#main{
+  padding-top:40px;
+  padding-bottom:40px;
 }

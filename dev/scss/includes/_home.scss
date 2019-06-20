@@ -197,47 +197,11 @@
   }
 }
 
-#blog-loop{
+#hp-blog-loop{
   background-color: $brand-color;
 
   h2{
     color: #fff;
     text-align:center;
-  }
-
-  .post-link{
-    height:277px;
-    width:277px;
-    margin-left:auto;
-    margin-right:auto;
-    position:relative;
-  }
-  .post-link-content{
-    padding:10px;
-    opacity:0;
-    transition:all .3s ease;
-    text-align:center;
-    position:absolute;
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-    z-index:3;
-
-    h3{
-      color:#fff;
-      font-size:24px;
-      font-weight: $font-weight-semibold;
-      text-transform:uppercase;
-      position:relative;
-      z-index:5;
-    }
-    .btn-alt{
-      position:relative;
-      z-index:5;
-    }
-  }
-  .post-link:hover .post-link-content{
-    opacity:1;
   }
 }
