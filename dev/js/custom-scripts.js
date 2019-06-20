@@ -42,7 +42,15 @@ jQuery(document).ready(function($){
     lastScrollTop = st;
   }
 
-  $('#manuals-carousel .carousel-inner .carousel-item').carouselHeights();
+  $('.carousel-heights .carousel-inner .carousel-item').carouselHeights();
+
+  var totalSlides = $('.carousel-item').length;
+  var currentSlide = $('.carousel-item.active').index() + 1;
+  $('#slide-counter').text(currentSlide + ' of ' + totalSlides);
+  $('#equipment-carousel').on('slid.bs.carousel', function(){
+    currentSlide = $('.carousel-item.active').index() + 1;
+    $('#slide-counter').text(currentSlide + ' of ' + totalSlides);
+  });
 });
 
 $.fn.carouselHeights = function () {

@@ -1,0 +1,77 @@
+.callout-section{
+  background-color: $brand-color;
+  position:relative;
+  padding-top:100px;
+  padding-bottom:150px;
+
+  .textured-border-top{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    max-height:57px;
+    z-index:1;
+  }
+  .textured-border{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    max-height:110px;
+    z-index:1;
+  }
+
+  h3{
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.other-images{
+  margin-top:60px;
+}
+
+.carousel-controls{
+  position:relative;
+  max-width:225px;
+  margin-left:auto;
+  margin-right:0;
+
+  .carousel-control-prev,
+  .carousel-control-next{
+    background-color: $brand-color;
+    height:42px;
+    width:42px;
+    opacity:1;
+
+    .prev-icon,
+    .next-icon{
+      font-size:48px;
+      color:#000;
+      font-weight: $font-weight-bold;
+      font-family: $alt-font;
+      height:100%;
+      width:100%;
+      line-height:1.1em;
+      opacity:.5;
+    }
+
+    &:hover .prev-icon,
+    &:hover .next-icon,
+    &:focus .prev-icon,
+    &:focus .next-icon{
+      opacity:1;
+    }
+  }
+}
+.slide-image-caption{
+  font-size:14px;
+  font-style:italic;
+  color:#808080;
+}
+#slide-counter{
+  display:block;
+  text-align:center;
+  font-size:18px;
+  font-weight: $font-weight-bold;
+  font-style:italic;
+}

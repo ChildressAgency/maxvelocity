@@ -143,3 +143,7 @@ section{
   padding-top:40px;
   padding-bottom:40px;
 }
+
+.narrow{
+  @include max-width-centered(770px);
+}
