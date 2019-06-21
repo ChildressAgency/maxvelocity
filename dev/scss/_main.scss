@@ -38,9 +38,12 @@ section{
 
 .intro-centered{
   text-align:center;
+  padding-top:40px;
+  padding-bottom:40px;
   @include max-width-centered(775px);
 
-  h1{
+  h1,
+  h2{
     color: $brand-color;
   }
 }
@@ -121,28 +124,23 @@ section{
   top:0;
   left:0;
   z-index:3;
+  background-color: rgba(0,0,0,.5);
 
   h3{
     color:#fff;
     font-size:20px;
     font-weight: $font-weight-semibold;
     text-transform:uppercase;
-    position:relative;
-    z-index:5;
-  }
-  .btn-alt{
-    position:relative;
-    z-index:5;
   }
 }
 .post-link:hover .post-link-content{
   opacity:1;
 }
-
+/*
 #main{
   padding-top:40px;
   padding-bottom:40px;
-}
+}*/
 
 .narrow{
   @include max-width-centered(770px);
