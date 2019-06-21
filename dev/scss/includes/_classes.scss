@@ -3,7 +3,7 @@
   position:relative;
   padding-top:100px;
   padding-bottom:150px;
-  color:#fff;
+  color:#000;
 
   .textured-border-top{
     position:absolute;
@@ -237,7 +237,7 @@
   p{
     margin-bottom:0;
     font-weight: $font-weight-semibold;
-    
+
     @include max-width-centered(815px);
   }
 }
