@@ -258,3 +258,34 @@
     }
   }
 }
+
+.box-callout{
+  border:10px solid $brand-color;
+
+  .box-callout-title{
+    font-size:28px;
+    font-weight: $font-weight-semibold;
+    color: #fff;
+    background-color: $brand-color-light;
+    text-align: center;
+    padding:15px;
+  }
+
+  .box-callout-body{
+    text-align:center;
+    padding:15px;
+
+    h4{
+      font-family: $alt-font;
+      font-weight: $font-weight-bold;
+      font-size: 20px;
+      margin-top:25px;
+      margin-bottom:25px;
+    }
+
+    ul{
+      list-style:none;
+      padding-left:0;
+    }
+  }
+}
