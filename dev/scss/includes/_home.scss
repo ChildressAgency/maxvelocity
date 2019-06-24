@@ -130,27 +130,6 @@
   .image-side{
     position:relative;
   }
-
-  .large-join-now{
-    font-family: $alt-font;
-    font-weight: $font-weight-bold;
-    font-size:100px;
-    line-height:.7em;
-    color:#fff;
-    position:relative;
-    z-index:3;
-
-    span{
-      display:inline-block;
-      vertical-align: middle;
-    }
-
-    &:hover,
-    &:focus{
-      color: $brand-color;
-      text-decoration:none;
-    }
-  }
 }
 
 #upcoming-courses{

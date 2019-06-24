@@ -44,13 +44,21 @@ jQuery(document).ready(function($){
 
   $('.carousel-heights .carousel-inner .carousel-item').carouselHeights();
 
-  var totalSlides = $('.carousel-item').length;
-  var currentSlide = $('.carousel-item.active').index() + 1;
-  $('#slide-counter').text(currentSlide + ' of ' + totalSlides);
-  $('#equipment-carousel').on('slid.bs.carousel', function(){
-    currentSlide = $('.carousel-item.active').index() + 1;
-    $('#slide-counter').text(currentSlide + ' of ' + totalSlides);
+  $('.carousel').each(function(){
+    updateSlideCounter($(this));
   });
+
+  $('.carousel').on('slid.bs.carousel', function () {
+    updateSlideCounter($(this));
+  });
+
+  function updateSlideCounter($carousel){
+    var totalSlides = $carousel.find('.carousel-item').length;
+    var currentSlide = $carousel.find('.carousel-item.active').index() + 1;
+    var $slideCounter = $carousel.find('.slide-counter');
+
+    $slideCounter.text(currentSlide + ' of ' + totalSlides);
+  }
 });
 
 $.fn.carouselHeights = function () {

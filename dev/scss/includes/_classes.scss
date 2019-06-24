@@ -64,18 +64,6 @@
     }
   }
 }
-.slide-image-caption{
-  font-size:14px;
-  font-style:italic;
-  color:#808080;
-}
-#slide-counter{
-  display:block;
-  text-align:center;
-  font-size:18px;
-  font-weight: $font-weight-bold;
-  font-style:italic;
-}
 
 #training-options{
   h2{
@@ -203,42 +191,22 @@
   }
 }
 
-#class-info{
-  .class-info-item{
-    margin-top:40px;
-    width:330px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-  }
-
-  .class-info-icon{
-    height:210px;
-  }
-
-  .class-info-body{
-    font-weight: $font-weight-semibold;
-  }
-
-  .class-info-title{
-    font-family: $alt-font;
-    font-weight: $font-weight-bold;
-    margin-top:15px;
-    margin-bottom:20px;
-  }
-}
-
 .disclaimer-box{
   border:10px solid $accent-color;
   background-color: $brand-color-light;
   padding:25px;
   text-align:center;
+  margin-top:40px;
 
   p{
     margin-bottom:0;
     font-weight: $font-weight-semibold;
 
     @include max-width-centered(815px);
+  }
+
+  .btn-main{
+    margin-top:0;
   }
 }
 
@@ -266,28 +234,27 @@
   }
 }
 
-#more-info-links{
+.fluid-img-links{
   .col-md-6{
     height:460px;
     position:relative;
     text-align:center;
+  }
+  a{
+    position:relative;
+    z-index:3;
+    font-family: $alt-font;
+    font-weight: $font-weight-bold;
+    font-size:40px;
+    text-transform: uppercase;
+    color: #fff;
+    padding:15px;
+    max-width:540px;
 
-    a{
-      position:relative;
-      z-index:3;
-      font-family: $alt-font;
-      font-weight: $font-weight-bold;
-      font-size:40px;
-      text-transform: uppercase;
-      color: #fff;
-      padding:15px;
-      max-width:540px;
-
-      &:hover,
-      &:focus{
-        text-decoration:none;
-        color: $brand-color-light;
-      }
+    &:hover,
+    &:focus{
+      text-decoration:none;
+      color: $brand-color-light;
     }
   }
 }
