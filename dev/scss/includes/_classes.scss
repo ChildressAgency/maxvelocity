@@ -241,3 +241,53 @@
     @include max-width-centered(815px);
   }
 }
+
+.class-overview{
+  border: 10px solid $brand-color;
+
+  caption{
+    caption-side: top;
+    text-align:center;
+    font-size:28px;
+    font-weight: $font-weight-semibold;
+    color:#fff;
+    background-color: $brand-color-light;
+  }
+
+  .table th,
+  .table td{
+    border:none;
+  }
+
+  .table th{
+    font-weight: $font-weight-bold;
+    text-transform:uppercase;
+    text-align:right;
+  }
+}
+
+#more-info-links{
+  .col-md-6{
+    height:460px;
+    position:relative;
+    text-align:center;
+
+    a{
+      position:relative;
+      z-index:3;
+      font-family: $alt-font;
+      font-weight: $font-weight-bold;
+      font-size:40px;
+      text-transform: uppercase;
+      color: #fff;
+      padding:15px;
+      max-width:540px;
+
+      &:hover,
+      &:focus{
+        text-decoration:none;
+        color: $brand-color-light;
+      }
+    }
+  }
+}
