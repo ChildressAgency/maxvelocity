@@ -1,0 +1,92 @@
+#reviews{
+  .nav-link{
+    position:relative;
+    display:block;
+    background-repeat:no-repeat;
+    margin-bottom:2px;
+
+    .dark-overlay{
+      background-color: $brand-color-light;
+      transition:background-color .3s ease;
+    }
+
+    .review-info{
+      position:relative;
+      color:#000;
+      z-index:5;
+      transition:color .3s ease;
+    }
+
+    &:hover,
+    &.active{
+      .dark-overlay{
+        background-color: rgba(0,0,0,.5);
+      }
+
+      .review-info{
+        color:#fff;
+      }
+    }
+  }
+}
+
+.review-year{
+  font-size:26px;
+  color: #fff;
+  text-align: center;
+  background-color: $accent-color;
+  margin-bottom:2px;
+}
+
+.review-type{
+  font-style:italic;
+  font-weight: $font-weight-normal;
+}
+
+.course-name{
+  font-weight: $font-weight-semibold;
+}
+
+.review-date,
+.review-author{
+  font-weight: $font-weight-normal;
+}
+
+.student-review{
+  h3{
+    font-size:28px;
+    font-weight: $font-weight-semibold;
+    margin-bottom:0;
+  }
+
+  .review-meta>span{
+    display:block;
+  }
+  .review-date{
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    font-style: italic;
+    color: $brand-color;
+    text-transform: uppercase;
+  }
+
+  .review-author{
+    color:#808080;
+  }
+}
+
+.review-archives{
+  margin-top:25px;
+  padding-left: 15px;
+
+  h4{
+    font-size:20px;
+    font-style: italic;
+    font-weight: $font-weight-normal;
+  }
+
+  ol li a{
+    color:#000;
+    font-weight: $font-weight-bold;
+  }
+}
