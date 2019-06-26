@@ -32,6 +32,10 @@
     max-height:110px;
     z-index:3;
   }
+
+  h2{
+    color: #fff;
+  }
 }
 
 #manuals-carousel{
@@ -42,10 +46,6 @@
     left:auto;
     right:auto;
     bottom:auto;
-
-    h2{
-      color: #fff;
-    }
 
     h4{
       font-weight: $font-weight-semibold;
