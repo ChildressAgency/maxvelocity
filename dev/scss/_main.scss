@@ -86,25 +86,6 @@ section{
   }
 }
 
-.form-control{
-  border-radius:0;
-  border:none;
-}
-
-.btn-submit{
-  display:inline-block;
-  border:none;
-  background-color: $brand-color-light;
-  padding:10px 40px;
-  width:100%;
-  transition:all .3s ease;
-
-  &:hover,
-  &:focus{
-    background-color: $brand-color;
-  }
-}
-
 .post-link{
   height:245px;
   width:245px;
@@ -233,5 +214,31 @@ a.large-arrow-link{
   h4{
     font-size:28px;
     font-weight: $font-weight-semibold;
+  }
+}
+
+.contact-info{
+  text-align: center;
+  font-weight: $font-weight-semibold;
+  margin-top:40px;
+
+  a{
+    color: #000;
+  }
+}
+
+.emergency-phone{
+  margin-top:60px;
+  background-color: #e2e0df;
+  padding:25px 15px;
+  text-align: center;
+  font-weight: $font-weight-semibold;
+
+  p{
+    @include max-width-centered(690px);
+  }
+
+  a{
+    color:#000;
   }
 }
