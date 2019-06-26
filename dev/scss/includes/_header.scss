@@ -85,6 +85,10 @@
     color: #fff;
     text-transform: uppercase;
     transition: all .3s ease;
+
+    @include media-breakpoint-down(sm){
+      font-size:18px;
+    }
   }
 
   .navbar-logo{
@@ -98,6 +102,12 @@
     background-size:cover;
     background-position:center center;
     transition:height .3s ease, width .3s ease;
+
+    @include media-breakpoint-down(sm){
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
   }
 
   &.navbar-clear{ 
@@ -110,4 +120,14 @@
     }
   }
 
+}
+
+#navbar{
+  @include media-breakpoint-down(md){
+    background-color:#000;
+    margin-left:-15px;
+    margin-right:-15px;
+    padding-left:15px;
+    padding-right:15px;
+  }
 }
