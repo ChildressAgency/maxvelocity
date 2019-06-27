@@ -9,7 +9,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <?php get_field('newsletter_signup_text', 'option'); ?>
+            <?php echo apply_filters('the_content', wp_kses_post(get_field('newsletter_signup_text', 'option'))); ?>
           </div>
           <div class="col-md-6">
             <?php echo do_shortcode(get_field('newsletter_signup_form_shortcode')); ?>

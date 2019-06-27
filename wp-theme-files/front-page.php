@@ -20,7 +20,11 @@
 
     <?php get_template_part('partials/section', 'manuals_carousel'); ?>
 
-    <?php get_template_part('partials/section', 'training_options'); ?>
+    <section id="hp-training-options">
+      <div class="container">
+        <?php get_template_part('partials/section', 'training_options'); ?>
+      </div>
+    </section>
 
     <section id="hp-videos" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/soldiers-dark.jpg); background-position:right top;">
       <div class="container">
@@ -28,13 +32,13 @@
           <div class="col-md-5">
             <article>
               <h2><span>Lights. Camera.</span>ACTION.</h2>
-              <?php the_field('videos_section_content'); ?>
+              <?php echo apply_filters('the_content', wp_kses_post(get_field('videos_section_content'))); ?>
             </article>
           </div>
           <div class="col-md-7">
             <?php if(get_field('video_section_display') == 'Video'): ?>
               <div class="embed-responsive embed-responsive-16by9">
-                <?php the_field('video_embed_link'); ?>
+                <?php echo esc_url(get_field('video_embed_link')); ?>
               </div>
             <?php else: ?>
               <?php $video_image = get_field('video_image'); if(!empty($video_image)): ?>
@@ -50,7 +54,7 @@
       <div class="row no-gutters">
         <div class="col-sm-6 text-side">
           <article>
-            <?php the_field('join_forum_section_content'); ?>
+            <?php echo apply_filters('the_content', wp_kses_post(get_field('join_forum_section_content'))); ?>
           </article>
         </div>
         <?php
