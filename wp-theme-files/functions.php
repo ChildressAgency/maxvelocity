@@ -102,6 +102,21 @@ function maxvelocity_setup(){
   add_theme_support('post-thumbnails');
   //set_post_thumbnail_size(320, 320);
 
+  add_theme_support(
+    'html5',
+    array(
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption'
+    )
+  );
+
+  add_editor_style(array('editor-style.css', maxvelocity_fonts_urls()));
+  add_theme_support('editor-styles');
+  add_theme_support('wp-block-styles');
+  add_theme_support('responsive-embeds');
+
   register_nav_menus(array(
     'header-nav' => 'Header Navigation',
     'footer-nav-1' => 'Footer Navigation 1',
@@ -111,6 +126,38 @@ function maxvelocity_setup(){
   ));
 
   load_theme_textdomain('maxvelocity', get_stylesheet_directory_uri() . '/languages');
+}
+
+//register custom fonts for editor
+function maxvelocity_fonts_urls(){
+  $fonts_url = '';
+  $font_families = array();
+
+  $font_families[] = 'Open+Sans:400,600,600i,700,800';
+  $font_families[] = 'Teko:400,700';
+
+  $query_args = array(
+    'family' => urlencode(implode('|', $font_families)),
+    'subset' => urlencode('latin,latin-ext')
+  );
+
+  $fonts_url = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
+  return esc_url_raw($fonts_url);
+}
+
+/**
+ * add preconnect for google fonts
+ */
+add_filter('wp_resource_hints', 'maxvelocity_resource_hints', 10, 2);
+function maxvelocity_resource_hints($urls, $relation_type){
+  if(wp_style_id('google-fonts', 'queue') && 'preconnect' == $relation_type){
+    $urls[] = array(
+      'href' => 'https://fonts.gstatic.com',
+      'crossorigin'
+    );
+  }
+
+  return $urls;
 }
 
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
@@ -155,5 +202,18 @@ function maxvelocity_header_fallback_menu(){ ?>
     </ul>
   </div>
 <?php }
+
+add_action('widgets_init', 'maxvelocity_register_sidebars');
+function maxvelocity_register_sidebars(){
+  register_sidebar(array(
+    'name' => esc_html__('Blog Sidebar', 'maxvelocity'),
+    'id' => 'sidebar-blog',
+    'description' => esc_html__('Add widgets here to appear in your sidebar on blog posts and archive pages.', 'maxvelocity'),
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
+}
 
 require_once dirname(__FILE__) . '/includes/woo-functions.php';
