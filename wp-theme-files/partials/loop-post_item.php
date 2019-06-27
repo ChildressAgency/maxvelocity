@@ -1,3 +1,9 @@
+<?php
+/**
+ * Blog post loop item
+ * used on Home and blog pages
+ */
+?>
 
 <div class="post-link" style="background-image:url(<?php echo esc_url(get_the_post_thumbnail_url('full')); ?>); background-position:center center;">
   <div class="post-link-content d-flex flex-column justify-content-between">

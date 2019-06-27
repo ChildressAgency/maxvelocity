@@ -1,14 +1,18 @@
 <?php get_header(); ?>
 <main id="main">
   <div class="container">
-    <?php 
+    <div class="search-page-form">
+      <?php get_search_form(); ?>
+    </div>
+
+    <?php
       if(have_posts()){
         while(have_posts()){
           the_post();
-          
+
           if(is_singular()){
             echo '<article class="intro-centered">';
-            the_content();
+              the_content();
             echo '</article>';
           }
           else{
