@@ -30,12 +30,40 @@
   }
 }
 
+#review-authors{
+  .card{
+    border:none;
+    border-radius:0;
+  }
+
+  .card-header{
+    padding:0;
+    background-color:transparent;
+    border:none;
+  }
+
+  .card-body{
+    padding:0;
+  }
+
+  .review-year-expander{
+    background-color:transparent;
+    border:none;
+    color:#fff;
+    width:100%;
+
+    &:focus{
+      outline:none;
+    }
+  }
+}
+
 .review-year{
   font-size:26px;
   color: #fff;
   text-align: center;
   background-color: $accent-color;
-  margin-bottom:2px;
+  margin-bottom:4px;
 }
 
 .review-type{
