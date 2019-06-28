@@ -59,6 +59,24 @@ jQuery(document).ready(function($){
 
     $slideCounter.text(currentSlide + ' of ' + totalSlides);
   }
+
+  //reviews tab ajax
+  $('.tab-changer').on('hide.bs.tab', function(e){
+    $('.student-review').html('<p class="loading">Loading...</p>');
+    
+    var reviewId = e.relatedTarget.data('review_id');
+    var nonce = e.relatedTarget.data('nonce');
+
+    var reviewData = {
+      'action': 'maxvelocity_get_review',
+      'nonce': nonce,
+      'review_id': reviewId
+    }
+
+    $.post(maxvelocity_settings.maxvelocity_ajaxurl, reviewData, function(response){
+      $('.student-review').html(response.data);
+    });
+  });
 });
 
 $.fn.carouselHeights = function () {

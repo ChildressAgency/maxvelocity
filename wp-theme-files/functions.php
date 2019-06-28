@@ -43,6 +43,10 @@ function maxvelocity_scripts(){
   wp_enqueue_script('bootstrap-popper');
   wp_enqueue_script('bootstrap-scripts');
   wp_enqueue_script('maxvelocity-scripts');
+
+  wp_localize_script('maxvelocity-scripts', 'maxvelocity_settings', array(
+    'maxvelocity_ajaxurl' => admin_url('admin-ajax.php');
+  ));
 }
 
 add_filter('script_loader_tag', 'maxvelocity_add_script_meta', 10, 2);
@@ -217,3 +221,37 @@ function maxvelocity_register_sidebars(){
 }
 
 require_once dirname(__FILE__) . '/includes/woo-functions.php';
+
+add_action('wp_ajax_nopriv_maxvelocity_get_review', 'maxvelocity_get_review');
+add_action('wp_ajax_maxvelocity_get_review', 'maxvelocity_get_review');
+function maxvelocity_get_review(){
+  if(!isset($_POST['review_id']) || $_POST['review_id'] == ''){
+    wp_send_json_error('<p>' . esc_html__('There was a problem processing your request. Please refresh the page and try again.', 'maxvelocity') . '</p>');
+  }
+
+  $review_id = $_POST['review_id'];
+
+  $the_review = new WP_Query(array(
+    'post_type' => 'review',
+    'page_id' => $review_id
+  ));
+
+  $review = '';
+  if($the_review->have_posts()){
+    while($the_review->have_posts()){
+      $the_review->the_post();
+
+      $review .= '<header><h3>' . esc_html__('Student Review', 'maxvelocity') . ': ' . esc_html(get_field('name_of_course_reviewed')) . '</h3>';
+      $review .= '<p class="review-meta"><span class="review-date">' . get_the_date('F, Y') . '</span>';
+      $review .= '<span class="review-author">' . esc_html__('Review left by', 'maxvelocity') . ': ' . esc_html(get_field('review_author')) . '</span></p></header>';
+
+      $review .= apply_filters('the_content', get_the_content());
+    }
+  }
+  else{
+    wp_send_jason_error('<p>' . esc_html__('There was a problem processing your request. Please refresh the page and try again.', 'maxvelocity') . '</p>');
+  }
+  wp_reset_postdata();
+
+  wp_send_json_success($review);
+}
