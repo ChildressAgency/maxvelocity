@@ -90,12 +90,12 @@
                   <div class="carousel-controls">
                     <a href="#location-gallery-<?php echo $l; ?>" class="carousel-control-prev" role="button" data-slide="prev">
                       <span class="prev-icon" aria-hidden="true">&lt;</span>
-                      <span class="sr-only">Previous</span>
+                      <span class="sr-only"><?php echo esc_html__('Previous', 'maxvelocity'); ?></span>
                     </a>
                     <span class="slide-counter"></span>
                     <a href="#location-gallery-<?php echo $l; ?>" class="carousel-control-next" role="button" data-slide="next">
                       <span class="next-icon" aria-hidden="true">&gt;</span>
-                      <span class="sr-only">Next</span>
+                      <span class="sr-only"><?php echo esc_html__('Next', 'maxvelocity'); ?></span>
                     </a>
                   </div>
                 <?php endif; ?>
