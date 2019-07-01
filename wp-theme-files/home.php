@@ -2,7 +2,7 @@
   <main id="main" class="pb-5">
     <div class="container">
       <div class="intro-centered">
-        <h1><?php the_field('blog_page_title'); ?></h1>
+        <?php get_template_part('partials/section', 'page_title'); ?>
       </div>
       <div class="row">
         <div class="col-md-8 col-lg-9 order-md-12">

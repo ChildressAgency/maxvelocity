@@ -2,7 +2,7 @@
 <main id="main">
   <div class="container">
     <div class="intro-centered">
-      <h1><?php echo sprintf(esc_html__('Showing results for %s', 'maxvelocity'), get_search_query()); ?></h1>
+      <?php get_template_part('partials/section', 'page_title'); ?>
     </div>
 
     <div class="row">

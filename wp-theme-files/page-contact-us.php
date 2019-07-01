@@ -2,7 +2,7 @@
 <main id="main">
   <div class="container">
     <article class="intro-centered">
-      <?php
+      <?php 
         if(have_posts()){
           while(have_posts()){
             the_post();
@@ -11,11 +11,16 @@
             the_content();
           }
         }
-        else{
-          echo '<p>' . esc_html__('Sorry, we could not find what you were looking for.', 'maxvelocity') . '</p>';
-        }
       ?>
     </article>
   </div>
+
+  <?php 
+    if(get_field('emergency_phone')){
+      echo '<div class="emergency-phone">';
+      echo apply_filters('the_content', wp_kses_post(get_field('emergency_phone')));
+      echo '</div>';
+    }
+  ?>
 </main>
 <?php get_footer();

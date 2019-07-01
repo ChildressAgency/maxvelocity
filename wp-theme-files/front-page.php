@@ -7,6 +7,8 @@
             if(have_posts()){
               while(have_posts()){
                 the_post();
+
+                get_template_part('partials/section', 'page_title');
                 the_content();
               }
             }

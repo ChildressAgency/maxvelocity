@@ -10,6 +10,7 @@
 
               if(is_singular()){
                 echo '<article class="intro-centered">';
+                  get_template_part('partials/section', 'page_title');
                   the_content();
                 echo '</article>';
               }

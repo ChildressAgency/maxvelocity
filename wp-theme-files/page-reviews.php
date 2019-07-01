@@ -2,7 +2,7 @@
   <main id="main">
     <div class="container">
       <div class="intro-centered">
-        <h1><?php echo esc_html__('Class Reviews', 'maxvelocity'); ?></h1>
+        <?php get_template_part('partials/section', 'page_title'); ?>
       </div>
 
       <div id="reviews">
