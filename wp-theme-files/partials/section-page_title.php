@@ -12,10 +12,14 @@ else{
     $blog_page = get_page_by_path('blog');
     $page_id = $blog_page->ID;
   }
+  elseif(is_singular('videos')){
+    $videos_page = get_page_by_path('videos');
+    $page_id = $videos_page->ID;
+  }
 
-  $page_title = get_the_title($page_id);
-  if(get_field('page_title', $page_id)){
-    $page_title = get_field('page_title', $page_id);
+  $page_title = get_field('page_title', $page_id);
+  if(empty($page_title)){
+    $page_title = get_the_title($page_id);
   }
 
   echo '<h1>' . esc_html($page_title) . '</h1>';
