@@ -56,3 +56,5 @@ require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/newsletter-signup
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/page-title.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/homepage-settings.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/classes-sections.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/contact-page.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/location-settings.php';
