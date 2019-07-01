@@ -45,7 +45,7 @@ function maxvelocity_scripts(){
   wp_enqueue_script('maxvelocity-scripts');
 
   wp_localize_script('maxvelocity-scripts', 'maxvelocity_settings', array(
-    'maxvelocity_ajaxurl' => admin_url('admin-ajax.php');
+    'maxvelocity_ajaxurl' => admin_url('admin-ajax.php')
   ));
 }
 
@@ -154,7 +154,7 @@ function maxvelocity_fonts_urls(){
  */
 add_filter('wp_resource_hints', 'maxvelocity_resource_hints', 10, 2);
 function maxvelocity_resource_hints($urls, $relation_type){
-  if(wp_style_id('google-fonts', 'queue') && 'preconnect' == $relation_type){
+  if(wp_style_is('google-fonts', 'queue') && 'preconnect' == $relation_type){
     $urls[] = array(
       'href' => 'https://fonts.gstatic.com',
       'crossorigin'
