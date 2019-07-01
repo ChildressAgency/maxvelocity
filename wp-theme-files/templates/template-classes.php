@@ -9,10 +9,12 @@ get_header(); ?>
     <section class="container">
       <article class="intro-centered">
         <?php
+          get_template_part('partials/section', 'page_title');
+
           if(have_posts()){
             while(have_posts()){
               the_post();
-              echo '<h1>' . esc_html(get_the_title()) . '</h1>';
+
               the_content();
             }
           }
