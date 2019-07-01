@@ -4,7 +4,7 @@
 
   $training_options = get_field('training_options', $tactical_classes_page_id);
   if($training_options): ?>
-    <h2><?php the_field('training_options_section_title'); ?></h2>
+    <h2><?php the_field('training_options_section_title', $tactical_classes_page_id); ?></h2>
 
     <ul id="options-tabs" class="nav nav-pills nav-fill flex-lg-nowrap" role="tablist">
       <?php $i = 0; foreach($training_options as $option): ?>
