@@ -38,3 +38,21 @@ function maxvelocity_load_textdomain(){
 
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/maxvelocity-create-post-types.php';
 add_action('init', 'maxvelocity_create_post_types');
+
+add_action('acf/init', 'maxvelocity_acf_options_page');
+function maxvelocity_acf_options_page(){
+  acf_add_options_page(array(
+    'page_title' => esc_html__('General Settings', 'maxvelocity'),
+    'menu_title' => esc_html__('General Settings', 'maxvelocity'),
+    'menu_slug' => 'general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
+  ));
+}
+
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/general-settings.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/hero-section.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/newsletter-signup.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/page-title.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/homepage-settings.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/classes-sections.php';
