@@ -60,3 +60,4 @@ require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/contact-page.php'
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/location-settings.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/reviews-settings.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/team-settings.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/videos-settings.php';
