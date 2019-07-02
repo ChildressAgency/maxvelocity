@@ -58,3 +58,4 @@ require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/homepage-settings
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/classes-sections.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/contact-page.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/location-settings.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/reviews-settings.php';

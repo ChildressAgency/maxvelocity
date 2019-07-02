@@ -8,7 +8,7 @@
   //get first year and next 25 years 
   $review_years = array();
   $cur_year = date('Y');
-  for($r = 2013; $r < $cur_year; $r++){
+  for($r = 2013; $r <= (int)$cur_year; $r++){
     $review_years[] = $r;
   }
   rsort($review_years);
