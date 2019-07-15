@@ -12,6 +12,25 @@ acf_add_local_field_group(array(
 	'key' => 'group_5d1a6970806fe',
 	'title' => esc_html__('Manuals Carousel Settings', 'maxvelocity'),
 	'fields' => array(
+    array(
+			'key' => 'field_5d2cf7d87fd75',
+			'label' => esc_html__('Manuals Section Title', 'maxvelocity'),
+			'name' => 'manuals_section_title',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),    
 		array(
 			'key' => 'field_5d1a6985c140e',
 			'label' => esc_html__('Manuals', 'maxvelocity'),
