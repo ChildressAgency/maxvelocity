@@ -93,7 +93,8 @@
             <p class="text-center mt-4">
               <a href="<?php echo esc_url(home_url('blog')); ?>" class="btn-main"><?php echo esc_html__('All Posts', 'maxvelocity'); ?></a>
             </p>
-      </div>
-    </section>
+          </div>
+        </section>
+    <?php endif; wp_reset_postdata(); ?>
   </main>
 <?php get_footer();
