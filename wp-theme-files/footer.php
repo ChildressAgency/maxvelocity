@@ -81,6 +81,30 @@
             }
 
             if(has_nav_menu('footer-nav-4')){
+              $facebook = get_field('facebook', 'option');
+              $instagram = get_field('instagram', 'option');
+              $twitter = get_field('twitter', 'option');
+              $youtube = get_field('youtube', 'option');
+              $rss = get_field('rss', 'option');
+
+              $footer_social = '<li><div class="footer-social">';
+              if($facebook){
+                $footer_social .= '<a href="' . esc_url($facebook) . '" id="facebook" title="Facebook" target="_blank"><i class="fab fa-facebook"></i><span class="sr-only">Facebook</span></a>';
+              }
+              if($instagram){
+                $footer_social .= '<a href="' . esc_url($instagram) . '" id="instagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>';
+              }
+              if($twitter){
+                $footer_social .= '<a href="' . esc_url($twitter) . '" id="twitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>';
+              }
+              if($youtube){
+                $footer_social .= '<a href="' . esc_url($youtube) . '" id="youtube" title="YouTube" target="_blank"><i class="fab fa-youtube"></i><span class="sr-only">YouTube</span></a>';
+              }
+              if($rss){
+                $footer_social .= '<a href="' . esc_url($rss) . '" id="rss" title="RSS" target="_blank"><i class="fas fa-rss"></i><span class="sr-only">RSS</span></a>';
+              }
+              $footer_social .= '</div></li>';
+
               $footer_nav_4 = maxvelocity_get_menu_by_location('footer-nav-4');
               $footer_nav_4_title = $footer_nav_4 ? esc_html($footer_nav_4->name) : '';
               $footer_nav_4_args = array(
@@ -93,7 +117,7 @@
                 'menu_class' => 'footer-menu list-unstyled',
                 'echo' => true,
                 'fallback_cb' => false,
-                'items_wrap' => '<h3>' . $footer_nav_4_title . '</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
+                'items_wrap' => '<h3>' . $footer_nav_4_title . '</h3><ul id="%1$s" class="%2$s">%3$s' . $footer_social . '</ul>',
                 'depth' => 1
               );
               wp_nav_menu($footer_nav_4_args);
