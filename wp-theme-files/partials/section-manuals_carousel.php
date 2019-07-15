@@ -2,8 +2,8 @@
 $manuals = get_field('manuals');
 if($manuals): ?>
   <section id="hp-manuals">
-    <h2><?php the_field('manuals_section_title'); ?></h2>
     <div class="container">
+      <h2><?php the_field('manuals_section_title'); ?></h2>
       <div id="manuals-carousel" class="carousel slide carousel-heights" data-ride="carousel">
         <ol class="carousel-indicators">
           <?php for($i = 0; $i < count($manuals); $i++): ?>
@@ -13,8 +13,8 @@ if($manuals): ?>
 
         <div class="carousel-inner">
 
-          <?php foreach($manuals as $manual): ?>
-            <div class="carousel-item active">
+          <?php $ci = 0; foreach($manuals as $manual): ?>
+            <div class="carousel-item<?php if($ci == 0){ echo ' active'; } ?>">
               <div class="row">
                 <div class="col-sm-7">
                   <div class="carousel-caption">
@@ -36,7 +36,7 @@ if($manuals): ?>
                 </div>
               </div>
             </div>
-          <?php endforeach; ?>
+          <?php $ci++; endforeach; ?>
 
         </div>
       </div>
