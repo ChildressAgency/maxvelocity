@@ -115,7 +115,7 @@
   <section id="hero" class="hp-hero d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image_url); ?>); <?php echo esc_attr($hero_image_css); ?>">
     <div class="container">
       <div class="hero-caption">
-        <p class="text-stroke"><?php echo apply_filters('the_content', wp_kses_post(get_field('hero_title'))); ?></p>
+        <p class="text-stroke"><?php echo wp_kses_post(get_field('hero_title')); ?></p>
         <p><?php echo esc_html(get_field('hero_caption')); ?></p>
       </div>
     </div>
