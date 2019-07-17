@@ -116,7 +116,7 @@
       <section id="disclaimer">
         <div class="container">
           <div class="disclaimer-box">
-            <?php echo apply_filters('the_content', wp_kses_post(get_field('classes_disclaimer'))); ?>
+            <?php echo wp_kses_post(get_field('classes_disclaimer')); ?>
           </div>
         </div>
       </section>
