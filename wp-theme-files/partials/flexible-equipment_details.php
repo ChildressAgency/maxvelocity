@@ -23,8 +23,9 @@
       <div class="col-md-7">
         <?php 
           $equipment_gallery = get_sub_field('equipment_gallery');
+          $carousel_id = uniqid();
           if($equipment_gallery): ?>
-            <div id="equipment-carousel" class="carousel slide carousel-heights" data-ride="carousel">
+            <div id="equipment-carousel-<?php echo $carousel_id; ?>" class="carousel slide carousel-heights" data-ride="carousel">
               <div class="carousel-inner">
                 <?php $e = 0; foreach($equipment_gallery as $image): ?>
                   <div class="carousel-item<?php if($e == 0){ echo ' active'; } ?>">
@@ -35,12 +36,12 @@
               </div>
 
               <div class="carousel-controls">
-                <a href="#equipment-carousel" class="carousel-control-prev" role="button" data-slide="prev">
+                <a href="#equipment-carousel-<?php echo $carousel_id; ?>" class="carousel-control-prev" role="button" data-slide="prev">
                   <span class="prev-icon" aria-hidden="true">&lt;</span>
                   <span class="sr-only"><?php echo esc_html__('Previous', 'maxvelocity'); ?></span>
                 </a>
                 <span class="slide-counter"></span>
-                <a href="#equipment-carousel" class="carousel-control-next" role="button" data-slide="next">
+                <a href="#equipment-carousel-<?php echo $carousel_id; ?>" class="carousel-control-next" role="button" data-slide="next">
                   <span class="next-icon" aria-hidden="true">&gt;</span>
                   <span class="sr-only"><?php echo esc_html__('Next', 'maxvelocity'); ?></span>
                 </a>
