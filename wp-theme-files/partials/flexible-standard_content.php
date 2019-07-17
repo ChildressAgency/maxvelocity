@@ -8,6 +8,6 @@
 
 <section class="container">
   <article class="intro-centered">
-    <?php echo apply_filters('the_content', wp_kses_post(get_sub_field('content_standard'))); ?>
+    <?php echo wp_kses_post(get_sub_field('content_standard')); ?>
   </article>
 </section>
