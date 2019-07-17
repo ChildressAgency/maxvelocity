@@ -42,6 +42,9 @@ get_header(); ?>
           elseif(get_row_layout() == 'equipment_section'){
             get_template_part('partials/flexible', 'equipment_details');
           }
+          elseif(get_row_layout() == 'disclaimer_box'){
+            get_template_part('partials/flexible', 'disclaimer_box');
+          }
           else{
             get_template_part('partials/flexible', 'standard_content');
           }
