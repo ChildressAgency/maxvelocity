@@ -50,6 +50,43 @@ function maxvelocity_acf_options_page(){
   ));
 }
 
+add_action('acf/init', 'maxvelocity_register_blocks');
+function maxvelocity_register_blocks(){
+  if(function_exists('acf_register_block_type')){
+    acf_register_block_type(array(
+      'name' => 'bordered_box',
+      'title' => esc_html__('Bordered Box', 'maxvelocity'),
+      'description' => esc_html__('A custom border box block.', 'maxvelocity'),
+      'render_template' => MAXVELOCITY_PLUGIN_DIR . '/blocks/bordered_box.php',
+      'category' => 'formatting',
+      'mode' => 'auto',
+      'align' => 'full',
+      'enqueue_style' => MAXVELOCITY_PLUGIN_URL . '/blocks/bordered_box.css'
+    ));
+  }
+}
+
+add_filter( 'wp_kses_allowed_html', 'maxvelocity_allow_iframes' );
+function maxvelocity_allow_iframes($allowedposttags){
+	// Allow iframes and the following attributes
+	$allowedposttags['iframe'] = array(
+		'align' => true,
+		'width' => true,
+		'height' => true,
+		'frameborder' => true,
+		'name' => true,
+		'src' => true,
+		'id' => true,
+		'class' => true,
+		'style' => true,
+		'scrolling' => true,
+		'marginwidth' => true,
+		'marginheight' => true,
+  );
+  
+	return $allowedposttags;
+}
+
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/general-settings.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/hero-section.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/newsletter-signup.php';
