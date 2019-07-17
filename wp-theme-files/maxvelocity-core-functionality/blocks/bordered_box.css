@@ -1,0 +1,28 @@
+.borderedbox .box-callout{
+  border:10px solid #8b8055;
+}
+
+.borderedbox .box-callout-title{
+  font-size:28px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #b2a16b;
+  text-align:center;
+  padding:15px;
+}
+
+.borderedbox .box-callout-body{
+  text-align:center;
+  padding:15px;
+}
+.borderedbox .box-callout-body h4{
+  font-family: "Teko", sans-serif;
+  font-weight:700;
+  font-size:20px;
+  margin-top:25px;
+  margin-bottom:25px;
+}
+.borderedbox .box-callout-body ul{
+  list-style: none;
+  padding-left: 0;
+}
