@@ -1,4 +1,4 @@
-<form action="<?php echo esc_url(home_url()); ?>" method="get">
+<form action="<?php echo esc_url(home_url()); ?>" method="get" class="search-form">
   <div class="input-group">
     <input type="text" id="search" name="s" class="form-control" placeholder="<?php echo esc_html__('Search', 'maxvelocity'); ?>" aria-label="<?php echo esc_html__('Search', 'maxvelocity'); ?>" aria-describedby="button-search" />
     <div class="input-group-append">
