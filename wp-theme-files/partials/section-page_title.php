@@ -4,7 +4,7 @@
  */
 
 if(is_search()){
-  echo '<h1>' . sprintf(esc_html__('Showing results for %s', 'maxvelocity'), get_search_query()) . '</h1>';
+  echo '<h1>' . sprintf(esc_html__('Showing results for "%s"', 'maxvelocity'), get_search_query()) . '</h1>';
 }
 else{
   $page_id = get_the_ID();
