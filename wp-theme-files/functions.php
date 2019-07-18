@@ -130,6 +130,12 @@ function maxvelocity_setup(){
   ));
 
   load_theme_textdomain('maxvelocity', get_stylesheet_directory_uri() . '/languages');
+
+  //woocommerce support
+  add_theme_support('woocommerce');
+  add_theme_support('wc-product-gallery-zoom');
+  add_theme_support('wc-product-gallery-lightbox');
+  add_theme_support('wc-product-gallery-slider');
 }
 
 //register custom fonts for editor
@@ -213,6 +219,16 @@ function maxvelocity_register_sidebars(){
     'name' => esc_html__('Blog Sidebar', 'maxvelocity'),
     'id' => 'sidebar-blog',
     'description' => esc_html__('Add widgets here to appear in your sidebar on blog posts and archive pages.', 'maxvelocity'),
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
+
+  register_sidebar(array(
+    'name' => esc_html__('Shop Sidebar', 'maxvelocity'),
+    'id' => 'sidebar-shop',
+    'description' => esc_html__('Add widgets here to appear in your sidebar on the shop pages.', 'maxvelocity'),
     'before_widget' => '<div class="sidebar-section">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
