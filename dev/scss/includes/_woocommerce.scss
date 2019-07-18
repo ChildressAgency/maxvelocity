@@ -1,0 +1,39 @@
+.woocommerce{
+  .checkout{
+    text-align:left;
+
+    .col-1,
+    .col-2{
+      max-width:none;
+    }
+
+    #customer_details{
+      margin-bottom:60px;
+    }
+
+    .form-row{
+      display:block;
+    }
+
+    label{
+      margin-bottom:0;
+    }
+  }
+
+  .input-text{
+    border: 1px solid $brand-color;
+    padding:0 5px;
+    height:35px;
+  }
+
+  .select2-selection{
+    border: 1px solid $brand-color;
+    border-radius: 0;
+    height: 35px;
+  }
+}
+
+.woocommerce-products-header__title{
+  text-align:center;
+  color: $brand-color;
+}
