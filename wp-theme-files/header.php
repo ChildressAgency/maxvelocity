@@ -111,11 +111,16 @@
 
       $hero_image_css = get_option('options_default_hero_background_image_css');
     }
+
+    $hero_title = get_field('hero_title');
+    if(is_home() || is_singular('post')){
+      $hero_title = 'Blog';
+    }
   ?>
   <section id="hero" class="hp-hero d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image_url); ?>); <?php echo esc_attr($hero_image_css); ?>">
     <div class="container">
       <div class="hero-caption">
-        <p class="text-stroke"><?php echo wp_kses_post(get_field('hero_title')); ?></p>
+        <p class="text-stroke"><?php echo wp_kses_post($hero_title); ?></p>
         <p><?php echo esc_html(get_field('hero_caption')); ?></p>
       </div>
     </div>
