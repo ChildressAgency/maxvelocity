@@ -88,6 +88,7 @@ function maxvelocity_allow_iframes($allowedposttags){
 }
 
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/general-settings.php';
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/blocks.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/hero-section.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/newsletter-signup.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/page-title.php';
