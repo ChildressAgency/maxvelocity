@@ -11,7 +11,7 @@
 ?>
 
 <h3><?php echo esc_html__('Subscribe', 'maxvelocity'); ?>&nbsp;
-  <a href="<?php echo esc_url(get_field('youtube_channel_link', $videos_page_id)); ?>">
+  <a href="<?php echo esc_url(get_field('youtube_channel_link', $videos_page_id)); ?>" target="_blank">
     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/youtube-subscribe-btn.jpg" class="img-fluid" alt="<?php echo esc_attr__('YouTube Icon', 'maxvelocity'); ?>" />
   </a>
 </h3>
