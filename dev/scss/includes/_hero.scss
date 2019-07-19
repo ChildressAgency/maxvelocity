@@ -1,9 +1,13 @@
 #hero{
-  margin-top: 46px;
+  margin-top: 45px;
   position:relative;
-  height:800px;
+  height:630px;
   background-repeat: no-repeat;
   background-size: cover;
+
+  &.hp-hero{
+    height:800px;
+  }
 
   .textured-border{
     position:absolute;
