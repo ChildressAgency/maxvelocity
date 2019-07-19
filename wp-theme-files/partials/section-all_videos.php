@@ -16,7 +16,7 @@
     <div class="all-videos">
       <h2><?php echo esc_html__('All Videos', 'maxvelocity'); ?></h2>
       <div id="all-videos-loop" class="d-flex flex-wrap justify-content-between">
-        <?php while($videos->have-posts()): $videos->the_post(); ?>
+        <?php while($videos->have_posts()): $videos->the_post(); ?>
           <div class="video-link">
             <?php 
               $videos_page = get_page_by_path('videos');
@@ -24,7 +24,7 @@
 
               $video_placeholder = get_field('video_placeholder_image');
               if(empty($video_placeholder)){
-                $video_placeholder = get_field('default_video_placeholder_image', $video_page_id);
+                $video_placeholder = get_field('default_video_placeholder_image', $videos_page_id);
               }
             ?>
             <a href="<?php the_permalink(); ?>">
