@@ -25,6 +25,17 @@
   h3{
     font-weight: $font-weight-semibold;
   }
+
+  a{
+    color: #000;
+    font-weight: $font-weight-bold;
+    font-style: italic;
+
+    &:hover,
+    &:focus{
+      color:#000;
+    }
+  }
 }
 
 .other-images{

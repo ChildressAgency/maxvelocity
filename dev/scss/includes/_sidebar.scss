@@ -1,16 +1,9 @@
 .sidebar-section{
-
-  & + .sidebar-section{
-    padding-bottom:25px;
-    padding-right:15px;
-  }
+  padding-bottom:25px;
+  padding-right:15px;
   
   @include media-breakpoint-up(768px){
     border-right:1px solid $brand-color;
-
-    &:first-child{
-      border-right:none;
-    }
   }
 
   h3{
@@ -48,6 +41,19 @@
       &:focus{
         background-color: $brand-color-light;
       }
+    }
+  }
+}
+
+#blog-sidebar{
+  .sidebar-section:first-child{
+    padding-bottom:0px;
+    padding-right:0px;
+  }
+
+  @include media-breakpoint-up(768px){
+    .sidebar-section:first-child{
+      border-right:none;
     }
   }
 }
