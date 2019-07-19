@@ -46,7 +46,24 @@ acf_add_local_field_group(array(
 			'prepend' => '',
 			'append' => '',
 			'maxlength' => '',
-		),
+    ),
+    /*array(
+			'key' => 'field_5d3210cdf9009',
+			'label' => esc_html__('Review Date', 'maxvelocity'),
+			'name' => 'review_date',
+			'type' => 'date_picker',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'display_format' => 'F, Y',
+			'return_format' => 'F, Y',
+			'first_day' => 1,
+		),*/
 	),
 	'location' => array(
 		array(
