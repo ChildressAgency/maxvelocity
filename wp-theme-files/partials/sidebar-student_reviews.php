@@ -19,7 +19,7 @@
     $y = 0; 
     foreach($review_years as $year): 
       $reviews = new WP_Query(array(
-        'post_type' => 'reviews',
+        'post_type' => 'review',
         'posts_per_page' => -1,
         'post_status' => 'publish',
         'year' => $year
@@ -29,11 +29,11 @@
         <div class="card">
           <div id="year-<?php echo $y; ?>" class="card-header">
             <h3 class="review-year">
-              <button type="button" class="review-year-expander" data-toggle="collapse" data-target="#authors-<?php echo $y; ?>" aria-expanded="true" aria-controls="authors-<?php echo $y; ?>"><?php echo $year; ?></button>
+              <button type="button" class="review-year-expander<?php if($y > 0){ echo ' collapsed'; } ?>" data-toggle="collapse" data-target="#authors-<?php echo $y; ?>" aria-expanded="<?php echo $y > 0 ? 'false' : 'true'; ?>" aria-controls="authors-<?php echo $y; ?>"><?php echo $year; ?></button>
             </h3>
           </div>
 
-          <div id="authors-<?php echo $y; ?>" class="collapse show" aria-labelledby="year-<?php echo $y; ?>" data-parent="#review-authors">
+          <div id="authors-<?php echo $y; ?>" class="collapse<?php if($y == 0){ echo ' show'; } ?>" aria-labelledby="year-<?php echo $y; ?>" data-parent="#review-authors">
             <div class="card-body">
               <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                 <?php $a = 0; while($reviews->have_posts()): $reviews->the_post(); ?>
@@ -66,5 +66,5 @@
           </div>
         </div>
       <?php endif; wp_reset_postdata(); ?>
-  <?php endforeach; ?>
+  <?php $reviews = ''; $y++; endforeach; ?>
 </div>
