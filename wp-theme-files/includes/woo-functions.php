@@ -32,6 +32,34 @@ function maxvelocity_shop_loop_wrapper_close(){
   echo '</div>'; //close row
 }
 
+add_action('woocommerce_before_shop_loop', 'maxvelocity_show_featured_section', 40);
+function maxvelocity_show_featured_section(){
+  if(is_shop()){
+    $featured_section_shortcode = get_field('featured_section_shortcode', 'option');
+    if($featured_section_shortcode){
+      echo '<div class="shop-featured-section">';
+        echo '<h2 class="shop-cat-title">' . esc_html(get_field('featured_section_title', 'option')) . '</h2>';
+        echo do_shortcode($featured_section_shortcode);
+      echo '</div>';
+    }
+
+    echo '<h2 class="shop-cat-title">' . esc_html__('Categories', 'maxvelocity') . '</h2>'; 
+  }
+}
+
+add_action('woocommerce_after_shop_loop_item', 'maxvelocity_remove_add_to_cart_button', 1);
+function maxvelocity_remove_add_to_cart_button(){
+  if(is_product_category() || is_shop()){
+    remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+  }
+}
+
+add_filter('woocommerce_account_menu_items', 'maxvelocity_remove_my_account_downloads', 999);
+function maxvelocity_remove_my_account_downloads($items){
+  unset($items['downloads']);
+  return $items;
+}
+
 //header cart
 add_action('maxvelocity_show_cart_link', 'maxvelocity_cart_link');
 function maxvelocity_cart_link(){
