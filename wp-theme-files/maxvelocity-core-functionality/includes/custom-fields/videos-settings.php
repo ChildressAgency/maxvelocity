@@ -94,7 +94,7 @@ acf_add_local_field_group(array(
 			'label' => esc_html__('Video Placeholder Image', 'maxvelocity'),
 			'name' => 'video_placeholder_image',
 			'type' => 'image',
-			'instructions' => esc_html__('Upload an image to display as a placeholder for the actual video. This helps with page performance.<br />Optimal size: 325px x 185px.', 'maxvelocity'),
+			'instructions' => esc_html__('Upload an image to display as a placeholder for the actual video. This helps with page performance. Optimal size: 325px x 185px. You can get the YouTube thumbnail from here: http://img.youtube.com/vi/VIDEOID/mqdefault.jpg, just replace VIDEOID with the id of the video.', 'maxvelocity'),
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
