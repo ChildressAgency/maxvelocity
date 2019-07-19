@@ -22,8 +22,8 @@
           </div>
           <div class="col-md-8">
             <div class="team-bio">
-              <h4><?php echo esc_html(get_field('team_member_name_and_title')); ?></h4>
-              <?php echo apply_filters('the_content', wp_kses_post(get_field('team_member_bio'))); ?>
+              <h4><?php echo esc_html(get_sub_field('team_member_name_and_title')); ?></h4>
+              <?php echo wp_kses_post(get_sub_field('team_member_bio')); ?>
             </div>
           </div>
         </div>
