@@ -87,6 +87,7 @@
 
   <?php
     $page_id = get_the_ID();
+    
     if(is_front_page()){
       $home_page = get_page_by_path('home');
       $page_id = $home_page->ID;
@@ -94,6 +95,11 @@
     if(is_home()){
       $blog_page = get_page_by_path('blog');
       $page_id = $blog_page->ID;
+    }
+
+    if(is_woocommerce()){
+      $shop_page = get_page_by_path('shop');
+      $page_id = $shop_page->ID;
     }
 
     $hero_image_id = get_post_meta($page_id, 'hero_background_image', true);
@@ -112,16 +118,17 @@
       $hero_image_css = get_option('options_default_hero_background_image_css');
     }
 
-    $hero_title = get_field('hero_title');
+    $hero_title = get_field('hero_title', $page_id);
+    $hero_caption = get_field('hero_caption', $page_id);
     if(is_home() || is_singular('post')){
       $hero_title = 'Blog';
     }
   ?>
-  <section id="hero" class="hp-hero d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image_url); ?>); <?php echo esc_attr($hero_image_css); ?>">
+  <section id="hero" class="<?php if(is_front_page()){ echo 'hp-hero '; } ?>d-flex align-items-center" style="background-image:url(<?php echo esc_url($hero_image_url); ?>); <?php echo esc_attr($hero_image_css); ?>">
     <div class="container">
       <div class="hero-caption">
         <p class="text-stroke"><?php echo wp_kses_post($hero_title); ?></p>
-        <p><?php echo esc_html(get_field('hero_caption')); ?></p>
+        <p><?php echo esc_html($hero_caption); ?></p>
       </div>
     </div>
     <div class="dark-overlay"></div>
