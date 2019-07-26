@@ -234,6 +234,16 @@ function maxvelocity_register_sidebars(){
     'before_title' => '<h3>',
     'after_title' => '</h3>'
   ));
+
+  register_sidebar(array(
+    'name' => esc_html__('Forum Sidebar', 'maxvelocity'),
+    'id' => 'sidebar-forum',
+    'description' => esc_html__('Add widgets here to appear in your sidebar on the forum pages.', 'maxvelocity'),
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
 }
 
 require_once dirname(__FILE__) . '/includes/woo-functions.php';
