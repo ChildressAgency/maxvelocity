@@ -57,3 +57,24 @@
     }
   }
 }
+
+#forum-sidebar{
+  .sidebar-section{
+    padding-right:0;
+    padding-left:15px;
+    padding-top:25px;
+    border-top:5px solid #000;
+
+    &:first-child{
+      border-top:none;
+    }
+
+    @include media-breakpoint-up(768px){
+      border-right:none;
+    }
+
+    h3{
+      text-align:center;
+    }
+  }
+}
