@@ -100,3 +100,6 @@ require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/reviews-settings.
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/team-settings.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/videos-settings.php';
 require_once MAXVELOCITY_PLUGIN_DIR . '/includes/custom-fields/shop-settings.php';
+
+require_once MAXVELOCITY_PLUGIN_DIR . '/includes/class-maxvelocity-import-forums.php';
+new Maxvelocity_Import_Forums();
