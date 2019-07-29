@@ -45,6 +45,20 @@
   }
 }
 
+#bbp_search_submit{
+  border-width:1px;
+  border-color: $brand-color-light;
+  border-radius: 0;
+  padding: 0px 10px;
+  background-color:transparent;
+  transition: all .3s ease;
+
+  &:hover,
+  &:focus{
+    background-color: $brand-color-light;
+  }
+}
+
 #blog-sidebar{
   .sidebar-section:first-child{
     padding-bottom:0px;
@@ -61,7 +75,7 @@
 #forum-sidebar{
   .sidebar-section{
     padding-right:0;
-    padding-left:15px;
+    padding-left:0px;
     padding-top:25px;
     border-top:5px solid #000;
 
@@ -75,6 +89,39 @@
 
     h3{
       text-align:center;
+    }
+  }
+
+  #bp-login-widget-form{
+    label{
+      margin-bottom:0;
+      margin-top:15px;
+    }
+
+    .input{
+      border: 1px solid $brand-color-light;
+      width:100%;
+      height:38px;
+    }
+    .forgetmenot{
+      margin-bottom:15px;
+    }
+
+    #bp-login-widget-submit{
+      border: none;
+      background-color: $brand-color;
+      padding:10px 25px;
+      transition: all .3s ease;
+      color:#fff;
+      text-transform:uppercase;
+      font-weight: $font-weight-semibold;
+
+      &:hover,
+      &:focus{
+        background-color: $brand-color-light;
+        color:#fff;
+        text-decoration:none;
+      }
     }
   }
 }
