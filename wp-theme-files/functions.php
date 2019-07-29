@@ -170,6 +170,35 @@ function maxvelocity_resource_hints($urls, $relation_type){
   return $urls;
 }
 
+add_action('login_enqueue_scripts', 'maxvelocity_login_logo');
+function maxvelocity_login_logo(){
+  ?>
+    <style type="text/css">
+      #login h1 a,
+      .login h1 a{
+        background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
+        background-size:unset;
+        height:auto;
+        width:100%;
+        text-indent:unset;
+        padding-top:81px;
+        overflow:visible;
+        text-transform:uppercase;
+        font-weight:bold;
+        margin-bottom:0;
+      }
+    </style>
+  <?php
+}
+add_filter('login_headerurl', 'maxvelocity_login_logo_url');
+function maxvelocity_login_logo_url(){
+  return home_url();
+}
+add_filter('login_headertext', 'maxvelocity_login_logo_url_title');
+function maxvelocity_login_logo_url_title(){
+  return 'Max Velocity Tactical';
+}
+
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
 
 function maxvelocity_get_menu_by_location($location){
