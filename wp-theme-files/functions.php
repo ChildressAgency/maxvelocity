@@ -310,3 +310,48 @@ function maxvelocity_get_review(){
 
   wp_send_json_success($review);
 }
+
+function maxvelocity_get_social_cart(){
+  $facebook = get_field('facebook', 'option');
+  $instagram = get_field('instagram', 'option');
+  $twitter = get_field('twitter', 'option');
+  $youtube = get_field('youtube', 'option');
+  $rss = get_field('rss', 'option');
+
+  $social_cart = '';
+  $social_cart .= '<div class="social">';
+
+  if($facebook){
+    $social_cart .= '<a href="' . esc_url($facebook) . '" id="facebook" title="Facebook" target="_blank"><i class="fab fa-facebook"></i><span class="sr-only">Facebook</span></a>';
+  }
+  if($twitter){
+    $social_cart .= '<a href="' . esc_url($twitter) . '" id="twitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>';
+  }
+  if($instagram){
+    $social_cart .= '<a href="' . esc_url($instagram) . '" id="instagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>';
+  }
+  if($youtube){
+    $social_cart .= '<a href="' . esc_url($youtube) . '" id="youtube" title="YouTube" target="_blank"><i class="fab fa-youtube"></i><span class="sr-only">YouTube</span></a>';
+  }
+  if($rss){
+    $social_cart .= '<a href="' . esc_url($rss) . '" id="rss" title="RSS" target="_blank"><i class="fas fa-rss"></i><span class="sr-only">RSS</span></a>';
+  }
+
+  $social_cart .= '</div>';
+
+  $social_cart .= '<div class="cart">';
+    if(is_user_logged_in()){
+      $social_cart .= '<a href="' . esc_url(home_url('my-account')) . '">' . esc_html__('My Account', 'maxvelocity') . '</a>';
+    }
+    else{
+      $social_cart .= '<a href="' . esc_url(home_url('login')) . '">' . esc_html__('Login', 'maxvelocity') . '</a>';
+    }
+  $social_cart .= '<span class="divider">|</span>';
+  //$social_cart .= sprintf(do_action('maxvelocity_show_cart_link'));
+  ob_start();
+    maxvelocity_cart_link();
+  $social_cart .= ob_get_clean();
+  $social_cart .= '</div>';
+
+  return $social_cart;
+}

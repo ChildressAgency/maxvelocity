@@ -69,7 +69,7 @@
             <div class="row">
               <div class="col-lg-5<?php if($l % 2 == 0){ echo ' order-lg-last'; } ?>">
                 <article>
-                  <?php echo apply_filters('the_content', wp_kses_post(get_field('location_description'))); ?>
+                  <?php echo wp_kses_post(get_sub_field('location_description')); ?>
                   <p class="text-center mt-5">
                     <a href="<?php echo esc_url(home_url('tactical-classes')); ?>" class="btn-main">Classes</a>
                   </p>
@@ -106,9 +106,9 @@
         </div>
       </section>
     <?php endif; ?>
-
+      <div class="container">
         <div class="disclaimer-box" style="margin-top:100px;">
-          <?php echo apply_filters('the_content', wp_kses_post(get_field('disclaimer'))); ?>
+          <?php echo wp_kses_post(get_field('disclaimer')); ?>
         </div>
       </div>
     </section>

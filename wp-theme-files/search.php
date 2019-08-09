@@ -16,7 +16,7 @@
           }
           else{
             echo '<p>' . esc_html__('Sorry, we could not find what you were looking for.', 'maxvelocity') . '</p>';
-          }
+          } wp_pagenavi();
         ?>
       </div>
       <div class="col-md-4 col-lg-3 order-md-1">

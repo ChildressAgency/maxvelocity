@@ -186,7 +186,7 @@ acf_add_local_field_group(array(
 			'key' => 'field_5d1a6e762a2bd',
 			'label' => esc_html__('Video Embed Link', 'maxvelocity'),
 			'name' => 'video_embed_link',
-			'type' => 'text',
+			'type' => 'oembed',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => array(

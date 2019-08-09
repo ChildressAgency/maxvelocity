@@ -16,6 +16,10 @@
     width:100%;
     max-height:113px;
   }
+
+  @include media-breakpoint-down(md){
+    margin-top:34px;
+  }
 }
 
 .hero-caption{

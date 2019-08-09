@@ -41,7 +41,7 @@
           <div class="col-md-7">
             <?php if(get_field('video_section_display') == 'Video'): ?>
               <div class="embed-responsive embed-responsive-16by9">
-                <?php echo esc_url(get_field('video_embed_link')); ?>
+                <?php echo get_field('video_embed_link'); ?>
               </div>
             <?php else: ?>
               <?php $video_image = get_field('video_image'); if(!empty($video_image)): ?>

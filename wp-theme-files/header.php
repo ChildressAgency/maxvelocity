@@ -22,35 +22,10 @@
             <?php $email_address = get_field('email', 'option'); ?>
             <a href="mailto:<?php echo esc_html($email_address); ?>"><?php echo esc_html($email_address); ?></a>
           </div>
-          <div class="social">
-            <?php
-              $facebook = get_field('facebook', 'option');
-              $instagram = get_field('instagram', 'option');
-              $twitter = get_field('twitter', 'option');
-              $youtube = get_field('youtube', 'option');
-              $rss = get_field('rss', 'option');
-            ?>
-            <?php if($facebook): ?>
-              <a href="<?php echo esc_url($facebook); ?>" id="facebook" title="Facebook" target="_blank"><i class="fab fa-facebook"></i><span class="sr-only">Facebook</span></a>
-            <?php endif; if($twitter): ?>
-              <a href="<?php echo esc_url($twitter); ?>" id="twitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
-            <?php endif; if($instagram): ?>
-              <a href="<?php echo esc_url($instagram); ?>" id="instagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
-            <?php endif; if($youtube): ?>
-              <a href="<?php echo esc_url($youtube); ?>" id="youtube" title="YouTube" target="_blank"><i class="fab fa-youtube"></i><span class="sr-only">YouTube</span></a>
-            <?php endif; if($rss): ?>
-              <a href="<?php echo esc_url($rss); ?>" id="rss" title="RSS" target="_blank"><i class="fas fa-rss"></i><span class="sr-only">RSS</span></a>
-            <?php endif; ?>
-          </div>
-          <div class="cart">
-            <?php if(is_user_logged_in()): ?>
-              <a href="<?php echo esc_url(home_url('my-account')); ?>"><?php echo esc_html__('My Account', 'maxvelocity'); ?></a>
-            <?php else: ?>
-              <a href="<?php echo esc_url(home_url('login')); ?>"><?php echo esc_html__('Login', 'maxvelocity'); ?></a>
-            <?php endif; ?>
-            <span class="divider">|</span>
-            <?php do_action('maxvelocity_show_cart_link'); ?>
-          </div>
+          <?php
+            $masthead_social_cart = maxvelocity_get_social_cart();
+            echo $masthead_social_cart;
+          ?>
         </div>
       </div>
     </div>
@@ -65,6 +40,10 @@
         </button>
 
         <?php
+          $header_menu_extra = '<li class="header_menu_extra">';
+          $header_menu_extra .= $masthead_social_cart;
+          $header_menu_extra .= '</li>';
+
           $header_nav_args = array(
             'theme_location' => 'header-nav',
             'menu' => '',
@@ -75,7 +54,7 @@
             'menu_class' => 'navbar-nav ml-auto',
             'echo' => true,
             'fallback_cb' => 'maxvelocity_header_fallback_menu',
-            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $header_menu_extra . '</ul>',
             'depth' => 2,
             'walker' => new WP_Bootstrap_NavWalker()
           );

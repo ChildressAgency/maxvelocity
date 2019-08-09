@@ -17,7 +17,7 @@
             </div>
           <?php else: ?>
             <p><?php echo esc_html__('Sorry, no posts were found.', 'maxvelocity'); ?></p>
-          <?php endif; ?>
+          <?php endif; wp_pagenavi(); ?>
         </div>
 
         <div class="col-md-4 col-lg-3 order-md-1">
