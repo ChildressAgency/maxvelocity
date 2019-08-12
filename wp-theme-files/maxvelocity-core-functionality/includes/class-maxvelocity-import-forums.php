@@ -47,10 +47,15 @@ if(!class_exists('Maxvelocity_Import_Forums')){
     private function process_import(){
       global $wpdb;
 
+      $missing_forum_ids = array('42625','31590','32608','34548','26723','66166','61493');
+      $count = count($missing_forum_ids);
+      $placeholders = array_fill(0, $count, '%d');
+      $missing_forums = implode(', ', $placeholders);
+
       $forums = $wpdb->get_results($wpdb->prepare("
         SELECT *
         FROM forum_export
-        WHERE post_type = %s", 'forum'));
+        WHERE post_id IN($missing_forums)", $missing_forum_ids));
 
       if($forums){
         foreach($forums as $forum){
