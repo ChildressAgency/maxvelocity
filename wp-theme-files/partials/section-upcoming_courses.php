@@ -7,7 +7,7 @@
     <?php echo EM_Events::output(array('limit' => 4)); ?>
 
     <p class="text-center mt-4">
-      <a href="#" class="btn-main">View Calendar</a>
+      <a href="<?php echo esc_url(home_url('events')); ?>" class="btn-main"><?php echo esc_html__('View Calendar', 'maxvelocity'); ?></a>
     </p>
   </div>
 </section>
