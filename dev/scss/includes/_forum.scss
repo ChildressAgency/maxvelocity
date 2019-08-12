@@ -64,4 +64,19 @@
       color:#808080;
     }
   }
+
+  blockquote{
+    margin:40px;
+    font-style:italic;
+
+    &:before{
+      content: "\201c";
+      display:block;
+      font-size:30px;
+      height:0;
+      left:-20px;
+      position:relative;
+      top:-10px;
+    }
+  }
 }
