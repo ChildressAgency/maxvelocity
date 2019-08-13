@@ -1,0 +1,49 @@
+.videos-main h2,
+.all-videos h2{
+  font-family: $main-font;
+  font-size:28px;
+  font-weight: $font-weight-semibold;
+}
+
+.video-title{
+  font-family: $alt-font;
+  font-size:30px;
+  font-weight: $font-weight-bold;
+}
+.video-description{
+  margin-top:40px;
+
+  a{
+    color: #000;
+    font-weight: $font-weight-semibold;
+    font-style: italic;
+  }
+}
+
+.video-popular{
+  h3{
+    text-align: center;
+    font-family: $alt-font;
+    font-weight: $font-weight-bold;
+    font-size:26px;
+    
+    &>a{
+      margin-left:25px;
+    }
+  }
+
+  ul li{
+    margin-bottom:10px;
+  }
+}
+
+.video-separator{
+  border-color: #808080;
+}
+
+.video-link{
+  height:auto;
+  margin-bottom:40px;
+
+  @include max-width-centered(280px);
+}

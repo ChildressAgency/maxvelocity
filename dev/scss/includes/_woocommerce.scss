@@ -1,0 +1,136 @@
+.woocommerce{
+  .checkout,
+  .woocommerce-MyAccount-content{
+    text-align:left;
+
+    .col-1,
+    .col-2{
+      max-width:none;
+    }
+
+    #customer_details{
+      margin-bottom:60px;
+    }
+
+    .form-row{
+      display:block;
+    }
+
+    label{
+      margin-bottom:0;
+    }
+  }
+
+  .input-text{
+    border: 1px solid $brand-color;
+    padding:0 5px;
+    height:35px;
+  }
+
+  .select2-selection{
+    border: 1px solid $brand-color;
+    border-radius: 0;
+    height: 35px;
+  }
+
+  ul.products li.product .price{
+    font-family: $alt-font;
+    font-weight: $font-weight-bold;
+    font-size: 40px;
+    color: $brand-color;
+  }
+
+  .button.add_to_cart_button,
+  .button.single_add_to_cart_button.alt,
+  a.button.alt,
+  button.button.alt{
+    background-color: $accent-color;
+    color: #fff;
+    border-radius: 0;
+
+    &:hover{
+      background-color: $brand-color;
+      color:#fff;
+    }
+  }
+
+  div.product{
+    .product_title{
+      font-family: $main-font;
+      font-weight: $font-weight-semibold;
+      font-size: 28px;
+    }
+    p.price{
+      font-family: $alt-font;
+      font-weight: $font-weight-bold;
+      font-size: 40px;
+      color: $brand-color;
+    }
+  }
+}
+
+.woocomm{
+  margin-bottom:60px;
+}
+
+.shop-featured-section{
+  border-bottom: 1px solid $brand-color;
+  margin-bottom:60px;
+}
+.shop-cat-title{
+  font-size:28px;
+  font-family: $main-font;
+  font-weight: $font-weight-semibold;
+  margin-bottom:25px;
+}
+
+.woocommerce-products-header{
+  margin-bottom:40px;
+}
+.woocommerce-products-header__title{
+  text-align:center;
+  color: $brand-color;
+}
+.woocommerce-loop-category__title{
+  color: #000;
+  font-weight: $font-weight-semibold;
+  font-family: $main-font;
+
+  mark{
+    background-color: transparent;
+  }
+}
+.woocommerce-loop-product__title{
+  font-family: $main-font;
+  font-weight: $font-weight-semibold;
+  font-size: 20px;
+  color:#000;
+}
+
+.woocommerce-cart,
+.woocommerce-checkout,
+.woocommerce-account{
+  .intro-centered{
+    max-width:none;
+  }
+}
+
+.woocommerce-MyAccount-navigation{
+  border-right: 1px solid $brand-color;
+  padding-right: 15px;
+
+  ul{
+    list-style:none;
+    padding-left: 0;
+    text-align: left;
+
+    li a{
+      color: #000;
+
+      &:hover,
+      &:focus{
+        color:#000;
+      }
+    }
+  }
+}

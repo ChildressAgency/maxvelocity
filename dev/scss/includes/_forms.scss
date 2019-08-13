@@ -1,0 +1,47 @@
+.contact-form{
+  @include max-width-centered(530px);
+}
+
+.form-control{
+  border-radius:0;
+  border-color: $brand-color;
+}
+
+.btn-submit{
+  display:inline-block;
+  border:none;
+  background-color: $brand-color;
+  padding:10px 40px;
+  width:100%;
+  transition:all .3s ease;
+  font-size:30px;
+  color: #fff;
+  font-weight: $font-weight-semibold;
+
+  &:hover,
+  &:focus{
+    background-color: $brand-color-light;
+  }
+}
+
+.newsletter-form{
+  .form-control{
+    border:none;
+  }
+
+  .btn-submit{
+    background-color: $brand-color-light;
+    font-size: 16px;
+    color: #000;
+    font-weight: $font-weight-normal;
+
+    &:hover,
+    &:focus{
+      background-color: $brand-color;
+    }
+  }
+}
+
+.payment-form .form-control-plaintext{
+  text-align:center;
+}

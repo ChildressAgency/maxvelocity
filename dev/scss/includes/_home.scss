@@ -1,0 +1,210 @@
+#hp-about{
+  padding-bottom:0;
+
+  .hp-section-image{
+    height: 540px;
+    width:100%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    position:relative;
+  }
+
+  .textured-border{
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:3;
+    width:100%;
+    max-height:97px;
+  }
+}
+
+#hp-manuals{
+  background-color: $brand-color;
+  position:relative;
+  padding-bottom:175px;
+
+  .textured-border{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    max-height:110px;
+    z-index:3;
+  }
+
+  h2{
+    color: #fff;
+  }
+}
+
+#manuals-carousel{
+  .carousel-caption{
+    position:relative;
+    color: #000;
+    text-align: left;
+    left:auto;
+    right:auto;
+    bottom:auto;
+
+    h4{
+      font-weight: $font-weight-semibold;
+      font-size:18px;
+    }
+  }
+
+  .carousel-indicators{
+    bottom:-60px;
+
+    li{
+      height:18px;
+      width:18px;
+      border-radius: 50%;
+      background-color: $brand-color-light;
+      opacity: 1;
+      margin-left:10px;
+      margin-right:10px;
+
+      &.active,
+      &:hover{
+        background-color: $accent-color;
+      }
+    }
+  }
+}
+
+#hp-training-options{
+  h2{
+    text-align: center;
+    margin-bottom:25px;
+    color: $brand-color;
+  }
+
+  #options-tabs.nav-pills .nav-link{
+    color: #808080;
+
+    &.active{
+      color: $brand-color;
+    }
+  }
+}
+
+#hp-videos{
+  background-repeat:no-repeat;
+  background-color:#000;
+
+  h2{
+    font-size:80px;
+    color: $brand-color;
+
+    span{
+      color: #fff;
+      font-size: 18px;
+      display:block;
+      font-family: $main-font;
+    }
+  }
+  p{
+    color:#fff;
+  }
+}
+
+#join-forum{
+  padding-top:0;
+  padding-bottom:0;
+
+  .text-side{
+    background-color: $brand-color;
+    padding-top:40px;
+    padding-bottom:40px;
+
+    article{
+      @include max-width-centered(420px);
+    }
+
+    h2{
+      color:#fff;
+    }
+  }
+
+  .image-side{
+    position:relative;
+  }
+}
+
+#upcoming-courses{
+  h2{
+    color: $brand-color;
+  }
+}
+.course-loop{
+  margin-bottom:40px;
+
+  img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+.course-short{
+  .course-title-link{
+    font-size:24px;
+    font-weight: $font-weight-semibold;
+    text-transform:uppercase;
+    color: $brand-color;
+  }
+
+  .course-date{
+    font-size:18px;
+  }
+
+  .course-categories.list-inline li{
+    display:inline-block;
+    padding-right:5px;
+  }
+  .course-categories.list-inline li+li{
+    padding-left:5px;
+    box-shadow:-6px 0px 0px -5px #808080;
+  }
+  .course-categories li a{
+    font-size:14px;
+    color:#808080;
+    font-style:italic;
+  }
+
+  .event-categories{
+    padding-left:0;
+    list-style:none;
+
+    li{
+      display:inline-block;
+      padding-right:5px;
+
+      a{
+        font-size:14px;
+        color:#808080;
+        font-style:italic;
+      }
+    }
+
+    li+li{
+      padding-left:5px;
+      box-shadow:-6px 0px 0px -5px #808080;
+    }
+  }
+}
+#em-wrapper .course-short{
+  text-align:left;
+}
+
+#hp-blog-loop{
+  background-color: $brand-color;
+
+  h2{
+    color: #fff;
+    text-align:center;
+  }
+}
