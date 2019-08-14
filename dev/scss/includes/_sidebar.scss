@@ -125,3 +125,27 @@
     }
   }
 }
+
+#classes-sidebar{
+  .sidebar-section{
+    text-align:left;
+    padding-right:0;
+    padding-left:15px;
+    border-right:none;
+  }
+
+  @include media-breakpoint-up(sm){
+    border-right:none;
+    border-left:1px solid $brand-color
+  }
+
+  .textwidget{
+    h4{
+      font-size:18px;
+
+      a{
+        color: #000;
+      }
+    }
+  }
+}

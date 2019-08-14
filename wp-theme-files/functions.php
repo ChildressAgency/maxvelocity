@@ -1,10 +1,11 @@
 <?php
+/*
 add_action('wp_footer', 'show_template');
 function show_template() {
 	global $template;
 	print_r($template);
 }
-
+*/
 add_action('wp_enqueue_scripts', 'jquery_cdn');
 function jquery_cdn(){
   if(!is_admin()){
@@ -268,6 +269,16 @@ function maxvelocity_register_sidebars(){
     'name' => esc_html__('Forum Sidebar', 'maxvelocity'),
     'id' => 'sidebar-forum',
     'description' => esc_html__('Add widgets here to appear in your sidebar on the forum pages.', 'maxvelocity'),
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
+
+  register_sidebar(array(
+    'name' => esc_html__('Classes Sidebar', 'maxvelocity'),
+    'id' => 'sidebar-classes',
+    'description' => esc_html__('Add widgets here to appear in your sidebar on the class pages.', 'maxvelocity'),
     'before_widget' => '<div class="sidebar-section">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',

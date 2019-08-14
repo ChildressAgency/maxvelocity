@@ -45,3 +45,27 @@
 .payment-form .form-control-plaintext{
   text-align:center;
 }
+
+.em-booking-form-details{
+  input[type="text"],
+  textarea{
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #8b8055;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  label{
+    text-align:left;
+    margin-bottom:0;
+  }
+}

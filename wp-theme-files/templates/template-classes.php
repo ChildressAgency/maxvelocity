@@ -7,18 +7,25 @@
 get_header(); ?>
   <main id="main">
     <section class="container">
-      <article class="intro-centered">
-        <?php
-          get_template_part('partials/section', 'page_title');
+      <article class="intro-centered" style="max-width:none;">
+        <?php get_template_part('partials/section', 'page_title'); ?>
 
-          if(have_posts()){
-            while(have_posts()){
-              the_post();
+        <div class="row">
+          <div class="col-md-8 col-lg-9 order-md-1">
+            <?php
+              if(have_posts()){
+                while(have_posts()){
+                  the_post();
 
-              the_content();
-            }
-          }
-        ?>
+                  the_content();
+                }
+              }
+            ?>
+          </div>
+          <div class="col-md-4 col-lg-3 order-md-12">
+            <?php get_sidebar('classes'); ?>
+          </div>
+        </div>
       </article>
     </section>
 
