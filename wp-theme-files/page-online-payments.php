@@ -13,10 +13,10 @@
         }
       ?>
 
-      <form action="https://www.eprocessingnetwork.com/cgi-bin/wo-order.pl" method="post" class="payment-form">
+      <form action="https://www.eprocessingnetwork.com/cgi-bin/wo/order.pl" method="post" class="payment-form">
         <input type="hidden" name="QB" value="" />
         <input type="hidden" name="ePNAccount" value="0615966" />
-        <input type="hidden" name="ReturnToURL" value="https://www.maxvelocitytactical.com/tactical-training" />
+        <input type="hidden" name="ReturnToURL" value="https://www.maxvelocitytactical.com/tactical-classes" />
         <input type="hidden" name="BackgroundColor" value="White" />
         <input type="hidden" name="TextColor" class="Black" />
 
