@@ -6,6 +6,9 @@
     </div>
     <div class="row">
       <div class="col-md-8 col-lg-9 order-md-1">
+        <p class="text-right">
+          <a href="<?php echo esc_url(home_url('latest-activity')); ?>" style="color:#000; font-weight:bold;">View Latest Activity</a>
+        </p>
         <?php 
           if(have_posts()){
             while(have_posts()){
