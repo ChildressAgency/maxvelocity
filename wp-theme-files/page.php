@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main id="main">
   <div class="container">
-    <article class="intro-centered">
+    <article>
       <?php
         get_template_part('partials/section', 'page_title');
         
