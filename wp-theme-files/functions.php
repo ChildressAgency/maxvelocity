@@ -366,3 +366,10 @@ function maxvelocity_get_social_cart(){
 
   return $social_cart;
 }
+
+add_action( 'bp_group_options_nav', 'buddydev_add_group_extra_custom_links'  );
+function buddydev_add_group_extra_custom_links() {
+    ?>
+    <li><a href="<?php echo esc_url(home_url('latest-activity')); ?>">Latest Activity</a></li>
+<?php 
+}
